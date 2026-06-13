@@ -1,0 +1,99 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$font-family-base: 'Inter', sans-serif;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "variables";
+
+/* ================= LOGIN y REGISTRO ================= */
+.login-body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #7fb7cf 0%, #2d5c73 50%, #0c1f2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: #f5f6f8;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 35px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.login-card .hero {
+  padding: 0 0 20px 0;
+}
+
+.login-card .hero-logo {
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.forgot-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: $primary-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.forgot-container {
+  display: none;
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background-color: #000;
+  border-color: #000;
+
+  &:hover {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: #000;
+  }
+}
+
+.btn-outline-secondary {
+  border-color: #ccc;
+  color: #333;
+
+  &:hover {
+    background-color: #e9eaec;
+    border-color: #bbb;
+    color: #000;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-card .hero-logo {
+    max-width: 150px;
+  }
+}

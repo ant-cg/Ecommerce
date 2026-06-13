@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Cenfo-Tech</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS compilado -->
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="login-body">
+
+  <div class="login-container">
+    <div class="login-card">
+
+      <section class="hero">
+        <img src="icons/Cenfo-tech.png" alt="Logo" class="hero-logo"/>
+      </section>
+
+      <h2>Inicia Sesión</h2>
+
+      <form id="loginForm">
+
+        <div class="mb-3">
+          <input 
+            type="text" 
+            id="loginCorreo"
+            class="form-control"
+            placeholder="Correo electrónico"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <input 
+            type="password"
+            id="loginPassword"
+            class="form-control"
+            placeholder="Contraseña"
+            required
+          >
+        </div>
+
+        <div class="text-end mb-4">
+          <a href="#" id="forgotPassword" class="forgot-link"> ¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <div id="forgotContainer" class="forgot-container mt-3 ">
+          <input type="email" id="forgotEmail" class="form-control mb-2" 
+          placeholder="Ingresa tu correo">
+          <button type="button" id="forgotSubmit"
+                  class="btn btn-outline-primary w-100">
+            Enviar 
+          </button>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row gap-3">
+          <button type="submit" class="btn btn-primary w-100">
+            Iniciar Sesión
+          </button>
+
+          <a href="registro.html" class="btn btn-outline-secondary w-100">
+            Registrarse
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="auth.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cenfo-Tech | Inicio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- CSS compilado desde SASS -->
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar-home">
+    <div class="nav-left">
+      <a href="home.html">
+        <img src="icons/Cenfo-tech.png" class="logo-mini" alt="Cenfo-Tech Logo" />
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <nav class="nav-links">
+        <a href="home.html" class="nav-link active">Inicio</a>
+        <a href="index.html" class="nav-link">About</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <a href="carrito.html" class="nav-icon-link" id="btnCarrito">
+        <i data-feather="shopping-cart"></i>
+      </a>
+      <a href="#" class="nav-icon-link" id="btnUsuario">
+        <i data-feather="user"></i>
+      </a>
+    </div>
+
+    <!-- Hamburguesa para mobile -->
+    <button class="hamburger" id="btnHamburger" aria-label="Abrir menú">
+      <i data-feather="menu"></i>
+    </button>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+      <a href="home.html" class="mobile-link active">Inicio</a>
+      <a href="index.html" class="mobile-link">About</a>
+    </nav>
+    <div class="mobile-icons">
+      <a href="carrito.html" class="nav-icon-link"><i data-feather="shopping-cart"></i></a>
+      <a href="#" class="nav-icon-link" id="mobileBtnUsuario"><i data-feather="user"></i></a>
+    </div>
+  </div>
+
+  <!-- ================= HERO BANNER ================= -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <p class="hero-subtitle">Producto Pro</p>
+      <h1 class="hero-title">Producto</h1>
+      <p class="hero-desc">El producto mas famoso de nuestra tienda</p>
+      <a href="#productos" class="btn-comprar">Comprar Ahora</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://pngimg.com/d/headphones_PNG101981.png" alt="Producto destacado" id="heroProductImg">
+    </div>
+  </section>
+
+  <!-- ================= TABS DE CATEGORIAS (mobile) ================= -->
+  <section class="product-tabs" id="productos">
+    <div class="tabs-container">
+      <button class="tab-btn active" data-tab="all">Todos</button>
+      <button class="tab-btn" data-tab="new">New Arrival</button>
+      <button class="tab-btn" data-tab="best">Bestseller</button>
+      <button class="tab-btn" data-tab="featured">Featured Products</button>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTOS ================= -->
+  <section class="products-section">
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- ================= PAGINACION ================= -->
+  <nav class="pagination" id="pagination"></nav>
+
+  <!-- ================= MODAL PRODUCTO ================= -->
+  <div class="modal-overlay" id="modalProducto">
+    <div class="modal-product">
+      <button class="modal-close" id="modalClose">✖</button>
+      <div class="modal-body">
+        <div class="modal-img-container">
+          <img src="" alt="Producto" class="modal-img" id="modalImg">
+        </div>
+        <div class="modal-info">
+          <span class="modal-category">Producto Destacado</span>
+          <h2 class="modal-name" id="modalName"></h2>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-price" id="modalPrice"></div>
+          <div class="modal-actions">
+            <button class="btn-modal-cart" id="modalAddCart">
+              <i data-feather="shopping-cart"></i> Agregar al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="icons/Cenfo-tech.png" class="footer-logo" alt="Cenfo-Tech Logo" />
+        <p>
+          Brindamos soluciones tecnológicas accesibles,
+          confiables y modernas.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+          <a href="#" aria-label="TikTok"><i data-feather="music"></i></a>
+          <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-menu">
+        <h4>Menu</h4>
+        <a href="home.html">Inicio</a>
+        <a href="index.html">About</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="login.html">Mi cuenta</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/home.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>

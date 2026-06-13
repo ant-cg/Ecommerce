@@ -1,0 +1,53 @@
+/* ================= LOGIN y REGISTRO ================= */
+.login-body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #7fb7cf 0%, #2d5c73 50%, #0c1f2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: #f5f6f8;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 35px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.forgot-link {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.forgot-container {
+  display: none;
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* Mobile- */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+  .login-logo-container img {
+    max-width: 150px;
+  }
+}
+
+/*# sourceMappingURL=auth.css.map */

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cenfo-Tech | About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="home.html">
+        <img src="icons/Cenfo-tech.png" class="logo-mini" alt="logo"/>
+      </a>
+      <span class="brand">CenfoTech</span>
+    </div>
+
+    <div class="nav-center">
+      <nav class="nav-links">
+        <a href="home.html">Inicio</a>
+        <a href="index.html" class="active">About</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <a href="carrito.html" class="nav-icon-link">
+        <i data-feather="shopping-cart"></i>
+      </a>
+      <a href="#" class="nav-icon-link" id="btnUsuario">
+        <i data-feather="user"></i>
+        <span id="usuarioNombre"></span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="icons/Cenfo-tech.png" class="hero-logo" alt="hero"/>
+  </section>
+
+  <section class="info">
+    <div class="left">
+      <div class="card">
+        <h3>Misión</h3>
+        <p>Brindar soluciones tecnológicas accesibles, confiables y modernas mediante la venta de componentes, accesorios y herramientas digitales.</p>
+      </div>
+      <div class="card">
+        <h3>Visión</h3>
+        <p>Ser la tienda líder en tecnología en Latinoamérica, reconocida por experiencia de usuario, atención personalizada y compromiso con la innovación.</p>
+      </div>
+    </div>
+    <div class="card big">
+      <h3>Valores de Cenfo-Tech</h3>
+      <ul>
+        <li>Innovación constante</li>
+        <li>Calidad garantizada</li>
+        <li>Atención personalizada</li>
+        <li>Transparencia y confianza</li>
+        <li>Accesibilidad tecnológica</li>
+        <li>Responsabilidad digital</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="team">
+    <h2>Nuestro Equipo</h2>
+    <div class="team-grid">
+      <div class="member">
+        <div class="avatar">J</div>
+        <div><strong>Juan Vargas</strong><p>Back-end Developer</p></div>
+      </div>
+      <div class="member">
+        <div class="avatar">A</div>
+        <div><strong>Anthony Chavarría</strong><p>QA Manager</p></div>
+      </div>
+      <div class="member">
+        <div class="avatar">J</div>
+        <div><strong>Jose Castro</strong><p>Front-end Developer</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="icons/Cenfo-tech.png" class="footer-logo" alt="logo"/>
+        <p>Brindamos soluciones tecnológicas accesibles, confiables y modernas.</p>
+        <div class="footer-social">
+          <i data-feather="twitter"></i>
+          <i data-feather="facebook"></i>
+          <i data-feather="instagram"></i>
+        </div>
+      </div>
+      <div class="footer-menu">
+        <h4>Menu</h4>
+        <a href="home.html">Inicio</a>
+        <a href="index.html">About</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="login.html">Mi cuenta</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+    
+    // Funcionalidad de usuario y cerrar sesión
+    const usuario = localStorage.getItem('usuario');
+    const btnUsuario = document.getElementById('btnUsuario');
+    const usuarioNombreSpan = document.getElementById('usuarioNombre');
+    
+    if (usuario && btnUsuario) {
+      const usuarioData = JSON.parse(usuario);
+      if (usuarioNombreSpan) {
+        usuarioNombreSpan.textContent = usuarioData.nombre.split(' ')[0];
+      }
+      btnUsuario.href = "#";
+      
+      btnUsuario.addEventListener('click', (e) => {
+        e.preventDefault();
+        Swal.fire({
+          title: "Cerrar sesión",
+          text: "¿Estás seguro que deseas cerrar sesión?",
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonText: "Sí, salir",
+          cancelButtonText: "Cancelar"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('usuario');
+            window.location.href = 'login.html';
+          }
+        });
+      });
+    } else if (btnUsuario) {
+      if (usuarioNombreSpan) {
+        usuarioNombreSpan.textContent = '';
+      }
+      btnUsuario.href = "login.html";
+    }
+  </script>
+</body>
+</html>

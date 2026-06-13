@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cenfo-Tech | Admin Productos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="home.html">
+        <img src="icons/Cenfo-tech.png" class="logo-mini" alt="logo"/>
+      </a>
+      <span class="brand">CenfoTech</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="home.html">Inicio</a>
+      <a href="index.html">About</a>
+    </nav>
+
+    <div class="nav-icons">
+      <a href="carrito.html"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="btnUsuario"><i data-feather="user"></i></a>
+    </div>
+  </header>
+
+  <section class="hero-admin">
+    <h1>Administración de Productos</h1>
+    <p>Gestiona tu catálogo de productos</p>
+  </section>
+
+  <div class="admin-container">
+    <div class="productos-lista">
+      <h2>Productos Existentes</h2>
+      <div id="productosLista"></div>
+    </div>
+
+    <div class="form-producto">
+      <h3>Nuevo Producto</h3>
+      <form id="formAgregar">
+        <div class="form-group">
+          <label>Nombre del producto *</label>
+          <input type="text" id="nombre" placeholder="Ej: Apple iPhone 14 Pro" required>
+        </div>
+        <div class="form-group">
+          <label>Precio *</label>
+          <input type="number" id="precio" placeholder="Ej: 1399" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label>URL de la imagen *</label>
+          <input type="text" id="imagen" placeholder="https://ejemplo.com/imagen.png" required>
+        </div>
+        <div class="form-group">
+          <label>Descripción</label>
+          <textarea id="descripcion" placeholder="Descripción del producto..."></textarea>
+        </div>
+        <button type="submit" class="btn-agregar">
+          <i data-feather="plus"></i> Agregar Producto
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="icons/Cenfo-tech.png" class="footer-logo" alt="logo"/>
+        <p>Brindamos soluciones tecnológicas accesibles, confiables y modernas.</p>
+        <div class="footer-social">
+          <a href="#"><i data-feather="twitter"></i></a>
+          <a href="#"><i data-feather="facebook"></i></a>
+          <a href="#"><i data-feather="instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-menu">
+        <h4>Menu</h4>
+        <a href="home.html">Inicio</a>
+        <a href="index.html">About</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="login.html">Mi cuenta</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modalEditar">
+    <div class="modal-content">
+      <button class="modal-close" id="btnCerrarModal">✖</button>
+      <h3>Modificar Producto</h3>
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" id="editNombre">
+      </div>
+      <div class="form-group">
+        <label>Precio</label>
+        <input type="number" id="editPrecio" step="0.01">
+      </div>
+      <div class="form-group">
+        <label>URL de la imagen</label>
+        <input type="text" id="editImagen">
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea id="editDescripcion" rows="3"></textarea>
+      </div>
+      <button class="btn-guardar" id="btnGuardarEdit">
+        <i data-feather="save"></i> Guardar Cambios
+      </button>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script>feather.replace();</script>
+</body>
+</html>
